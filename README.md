@@ -1,2 +1,2 @@
 # CrystalMountain
-Build version info for my game
+Game info for my first game "Crystal Mountain"
