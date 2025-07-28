@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://baikp2ecanplx"]
+
+[ext_resource type="Script" uid="uid://b3k0xjirtnwcd" path="res://Scripts/commands.gd" id="1_oxsfb"]
+
+[node name="Commands" type="Node"]
+script = ExtResource("1_oxsfb")
