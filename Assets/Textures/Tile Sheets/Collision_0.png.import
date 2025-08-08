@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab1f7c1iv783"
-path="res://.godot/imported/MyGameFont_Flash.png-52c5625fe1ccd0ed2fd71e82785e65d1.ctex"
+uid="uid://dqwuv0vbjt7cx"
+path="res://.godot/imported/Collision_0.png-341e214a03037887044f2ede95bfd149.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fonts/MyGameFont_Flash.png"
-dest_files=["res://.godot/imported/MyGameFont_Flash.png-52c5625fe1ccd0ed2fd71e82785e65d1.ctex"]
+source_file="res://Assets/Textures/Tile Sheets/Collision_0.png"
+dest_files=["res://.godot/imported/Collision_0.png-341e214a03037887044f2ede95bfd149.ctex"]
 
 [params]
 

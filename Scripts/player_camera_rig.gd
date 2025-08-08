@@ -1,0 +1,37 @@
+extends Node
+
+@export_group("What's","Up?")
+@export var obj_following: Node
+var CamBorder_Left:   int = -10000
+var CamBorder_Right:  int =  10000
+var CamBorder_Top:    int = -10000
+var CamBorder_Bottom: int =  10000
+
+
+func _ready() -> void:
+	if obj_following != null:
+		create_camera(obj_following)
+
+func _process(delta: float) -> void:
+	if obj_following.Cam_BordersReset == true:
+		CamBorder_Left   = obj_following.Cam_LeftBorder
+		CamBorder_Right  = obj_following.Cam_RightBorder
+		CamBorder_Top    = obj_following.Cam_TopBorder
+		CamBorder_Bottom = obj_following.Cam_BottomBorder
+		create_camera(obj_following)
+		obj_following.Cam_BordersReset = false
+		obj_following.remove_child(obj_following.get_child_count()-1)
+		obj_following.child
+		print(obj_following.get_child(obj_following.get_child_count()-1))
+
+
+func create_camera(follow_obj) -> void:
+	var new_cam = Camera2D.new()
+	new_cam.name = "GameCam"
+	new_cam.zoom.x = 4
+	new_cam.zoom.y = 4
+	new_cam.limit_left = CamBorder_Left
+	new_cam.limit_right = CamBorder_Right
+	new_cam.limit_top = CamBorder_Top
+	new_cam.limit_bottom = CamBorder_Bottom
+	follow_obj.add_child(new_cam)
