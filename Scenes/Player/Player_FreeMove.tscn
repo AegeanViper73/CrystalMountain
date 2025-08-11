@@ -57,7 +57,9 @@ animations = [{
 size = Vector2(10, 24)
 
 [node name="PlayerFreeMove" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_onavl")
 
@@ -70,4 +72,3 @@ frame_progress = 0.0690427
 shape = SubResource("RectangleShape2D_446bw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)

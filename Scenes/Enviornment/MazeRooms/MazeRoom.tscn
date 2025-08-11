@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnup6ibycerj6"]
+
+[ext_resource type="Script" uid="uid://k4k5dweulydm" path="res://Scripts/maze_room_config.gd" id="1_6cdys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8117"]
+size = Vector2(486, 486)
+
+[node name="MazeRoom" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6cdys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t8117")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var PlayerMoveSpeed: int = 400
+var PlayerMoveSpeed: int = 200
 @onready var player_cam: Camera2D = $Camera2D
 
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Cam_BordersReset == true:
 		player_cam.limit_left   = Cam_LeftBorder
 		player_cam.limit_right  = Cam_RightBorder
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		Cam_BordersReset = false
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var PlayerMoveX = Input.get_axis("MoveLeft","MoveRight")
 	var PlayerMoveY = Input.get_axis("MoveUp","MoveDown")
 	velocity = Vector2(PlayerMoveX,PlayerMoveY) * PlayerMoveSpeed
