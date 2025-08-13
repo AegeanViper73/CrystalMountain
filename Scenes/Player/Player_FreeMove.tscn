@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cq4hddt3v8ygn"]
 
-[ext_resource type="Script" uid="uid://7bk3buuxgu0y" path="res://Scripts/player_free_move.gd" id="1_onavl"]
+[ext_resource type="Script" uid="uid://7bk3buuxgu0y" path="res://Scripts/Player/player_free_move.gd" id="1_onavl"]
 [ext_resource type="Texture2D" uid="uid://77ni2xmht0qy" path="res://Assets/Textures/Sprites/Player/CrystalPlayer.png" id="2_lbw0d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iewef"]
@@ -72,3 +72,4 @@ frame_progress = 0.0690427
 shape = SubResource("RectangleShape2D_446bw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2i61l368rtv2"]
+
+[ext_resource type="Script" uid="uid://dvor3n76l7dxw" path="res://Scripts/door_keys.gd" id="1_44j10"]
+
+[node name="DoorKeys" type="Node"]
+script = ExtResource("1_44j10")

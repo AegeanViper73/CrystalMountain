@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var PlayerMoveSpeed: int = 200
+var PlayerMoveSpeed: int = 400
 @onready var player_cam: Camera2D = $Camera2D
 
 

@@ -1,59 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7l6v110jt07j"]
+[gd_scene load_steps=9 format=3 uid="uid://q4g2kry2hve0"]
 
-[ext_resource type="Texture2D" uid="uid://dqwuv0vbjt7cx" path="res://Assets/Textures/Tile Sheets/Collision_0.png" id="1_kfo3n"]
-[ext_resource type="Script" uid="uid://kw51rj0mxffo" path="res://Scripts/stairs.gd" id="1_wu4ey"]
+[ext_resource type="Script" uid="uid://by5uriqnq4225" path="res://Scripts/stairs.gd" id="1_i5dhj"]
+[ext_resource type="Texture2D" uid="uid://dqwuv0vbjt7cx" path="res://Assets/Textures/Tile Sheets/Collision_0.png" id="1_mvdin"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wu4ey"]
-atlas = ExtResource("1_kfo3n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5dhj"]
+atlas = ExtResource("1_mvdin")
 region = Rect2(112, 96, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilk2a"]
-atlas = ExtResource("1_kfo3n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ree2"]
+atlas = ExtResource("1_mvdin")
 region = Rect2(112, 144, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cf1i"]
-atlas = ExtResource("1_kfo3n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq2xj"]
+atlas = ExtResource("1_mvdin")
 region = Rect2(112, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2048e"]
-atlas = ExtResource("1_kfo3n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1jw"]
+atlas = ExtResource("1_mvdin")
 region = Rect2(112, 48, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_onbjj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8a46"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wu4ey")
+"texture": SubResource("AtlasTexture_i5dhj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ilk2a")
+"texture": SubResource("AtlasTexture_5ree2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8cf1i")
+"texture": SubResource("AtlasTexture_nq2xj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2048e")
+"texture": SubResource("AtlasTexture_jp1jw")
 }],
 "loop": true,
-"name": &"Stair_State",
+"name": &"default",
 "speed": 0.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfo3n"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0smm"]
 size = Vector2(48, 48)
 
 [node name="Stairs" type="Node2D"]
-script = ExtResource("1_wu4ey")
+script = ExtResource("1_i5dhj")
+StairDirection = Dictionary[String, String]({
+"SpotOne": "",
+"SpotTwo": ""
+})
+Coords = Dictionary[String, Vector2]({
+"SpotOne": Vector2(0, 0),
+"SpotTwo": Vector2(0, 0)
+})
 
-[node name="Stairs_Direction" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_onbjj")
-animation = &"Stair_State"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y8a46")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_kfo3n")
+shape = SubResource("RectangleShape2D_b0smm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
