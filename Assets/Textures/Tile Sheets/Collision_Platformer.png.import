@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmwljd7kvkehm"
-path="res://.godot/imported/BaseTiles_0.png-2a516e13978d4e67f495f96753c54a60.ctex"
+uid="uid://bgsiocelqcrww"
+path="res://.godot/imported/Collision_Platformer.png-0b25bed4582524f75e39b299359c86c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Tile Sheets/BaseTiles_0.png"
-dest_files=["res://.godot/imported/BaseTiles_0.png-2a516e13978d4e67f495f96753c54a60.ctex"]
+source_file="res://Assets/Textures/Tile Sheets/Collision_Platformer.png"
+dest_files=["res://.godot/imported/Collision_Platformer.png-0b25bed4582524f75e39b299359c86c5.ctex"]
 
 [params]
 

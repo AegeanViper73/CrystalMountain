@@ -13,9 +13,13 @@ const GravityLimit:  float =  400
 const GravityAdd:    float =  1500
 var   CanJump:       bool
 
+var GravityDirection: String = "Down"
+
 #Link Nodes For Use Reference
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var detect: Area2D = $Detect
+@onready var player_cam: Camera2D = $Camera2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,37 +29,122 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if GravityDirection == "Left":
+		self.rotation_degrees = 90
+	elif GravityDirection == "Right":
+		self.rotation_degrees = 270
+	elif GravityDirection == "Up":
+		self.rotation_degrees = 180
+	elif GravityDirection == "Down":
+		self.rotation_degrees = 0
 
 
 func _physics_process(delta: float) -> void:
-	if is_on_floor():
-		CanJump = true
-		coyote_timer.start()
-	else:
-		
-		if velocity.y < GravityLimit:
-			velocity.y += GravityAdd * delta
+	
+	if GravityDirection == "Down":
+		if is_on_floor():
+			CanJump = true
+			coyote_timer.start()
 		else:
-			velocity.y = GravityLimit
-	
-	if CanJump == true:
-		if Input.is_action_just_pressed("Jump"):
-			velocity.y = JumpHeight
-	
-	if CanMovePlayer == true:
-		#Set Movement Speed Of Player
-		MovingSpeed = Input.get_axis("MoveLeft","MoveRight")
-		#Check If Player Is Trying To Run
-		if Input.is_action_pressed("Run"):
-			PlayerRun = 1.5
-		else:
-			PlayerRun = 1
+			
+			if velocity.y < GravityLimit:
+				velocity.y += GravityAdd * delta
+			else:
+				velocity.y = GravityLimit
 		
-		velocity.x = MovingSpeed * PlayerSpeed * PlayerRun
+		if CanJump == true:
+			if Input.is_action_just_pressed("Jump"):
+				velocity.y = JumpHeight
+		
+		if CanMovePlayer == true:
+			#Set Movement Speed Of Player
+			MovingSpeed = Input.get_axis("MoveLeft","MoveRight")
+			#Check If Player Is Trying To Run
+			if Input.is_action_pressed("Run"):
+				PlayerRun = 1.5
+			else:
+				PlayerRun = 1
+			
+			velocity.x = MovingSpeed * PlayerSpeed * PlayerRun
 	
+	if GravityDirection == "Up":
+		if is_on_ceiling():
+			CanJump = true
+			coyote_timer.start()
+		else:
+			
+			if velocity.y > -GravityLimit:
+				velocity.y -= GravityAdd * delta
+			else:
+				velocity.y = -GravityLimit
+		
+		if CanJump == true:
+			if Input.is_action_just_pressed("Jump"):
+				velocity.y = -JumpHeight
+		
+		if CanMovePlayer == true:
+			#Set Movement Speed Of Player
+			MovingSpeed = Input.get_axis("MoveLeft","MoveRight")
+			#Check If Player Is Trying To Run
+			if Input.is_action_pressed("Run"):
+				PlayerRun = 1.5
+			else:
+				PlayerRun = 1
+			
+			velocity.x = -MovingSpeed * PlayerSpeed * PlayerRun
 	
+	if GravityDirection == "Right":
+		if is_on_wall() and get_slide_collision(0).get_position().x > position.x: #This extra bit prevents sticking to "ceiling"
+			CanJump = true
+			coyote_timer.start()
+		else:
+			
+			if velocity.x < GravityLimit:
+				velocity.x += GravityAdd * delta
+			else:
+				velocity.x = GravityLimit
+		
+		if CanJump == true:
+			if Input.is_action_just_pressed("Jump"):
+				velocity.x = JumpHeight
+		
+		if CanMovePlayer == true:
+			#Set Movement Speed Of Player
+			MovingSpeed = Input.get_axis("MoveLeft","MoveRight")
+			#Check If Player Is Trying To Run
+			if Input.is_action_pressed("Run"):
+				PlayerRun = 1.5
+			else:
+				PlayerRun = 1
+			
+			velocity.y = -MovingSpeed * PlayerSpeed * PlayerRun
 	
+	if GravityDirection == "Left":
+		if is_on_wall() and get_slide_collision(0).get_position().x < position.x: #This extra bit prevents sticking to "ceiling"
+			CanJump = true
+			coyote_timer.start()
+		else:
+			
+			if velocity.y > -GravityLimit:
+				velocity.x -= GravityAdd * delta
+			else:
+				velocity.x = -GravityLimit
+		
+		if CanJump == true:
+			if Input.is_action_just_pressed("Jump"):
+				velocity.x = -JumpHeight
+		
+		if CanMovePlayer == true:
+			#Set Movement Speed Of Player
+			MovingSpeed = Input.get_axis("MoveLeft","MoveRight")
+			#Check If Player Is Trying To Run
+			if Input.is_action_pressed("Run"):
+				PlayerRun = 1.5
+			else:
+				PlayerRun = 1
+			
+			velocity.y = MovingSpeed * PlayerSpeed * PlayerRun
+		
 	move_and_slide()
 
 
@@ -64,3 +153,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_coyote_timer_timeout() -> void:
 	CanJump = false
+
+
+func _on_detect_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

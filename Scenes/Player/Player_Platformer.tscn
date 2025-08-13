@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bex8ybu8iv2ed"]
+[gd_scene load_steps=30 format=3 uid="uid://bex8ybu8iv2ed"]
 
 [ext_resource type="Texture2D" uid="uid://77ni2xmht0qy" path="res://Assets/Textures/Sprites/Player/CrystalPlayer.png" id="1_glndo"]
 [ext_resource type="Script" uid="uid://bd2l20q273woa" path="res://Scripts/Player/player_platformer.gd" id="1_radb5"]
@@ -197,6 +197,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astlk"]
 size = Vector2(10, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_radb5"]
+size = Vector2(10, 22)
+
 [node name="PlayerPlatformer" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_radb5")
@@ -214,4 +217,19 @@ shape = SubResource("RectangleShape2D_astlk")
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.08
 
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(4, 4)
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 4.0
+
+[node name="Detect" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_radb5")
+
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
