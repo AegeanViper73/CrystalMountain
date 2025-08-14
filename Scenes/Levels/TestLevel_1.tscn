@@ -334,15 +334,15 @@ Coords = Dictionary[String, Vector2]({
 SetKeys = NodePath("../../DoorKeys")
 
 [node name="Stairs_6" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
-position = Vector2(-104, -152)
+position = Vector2(-152, 24)
 StairDirection = Dictionary[String, String]({
 "SpotOne": "Right",
-"SpotTwo": ""
+"SpotTwo": "Down"
 })
 WhichDoor = "Six"
 Coords = Dictionary[String, Vector2]({
 "SpotOne": Vector2(-104, -152),
-"SpotTwo": Vector2(0, 0)
+"SpotTwo": Vector2(-152, 24)
 })
 SetKeys = NodePath("../../DoorKeys")
 
@@ -595,4 +595,4 @@ CurrentDoor = "Twelve"
 GetKeys = NodePath("../../DoorKeys")
 
 [node name="PlayerFreeMove" parent="." instance=ExtResource("2_cw6mw")]
-position = Vector2(-6, -561)
+position = Vector2(-139, -47)

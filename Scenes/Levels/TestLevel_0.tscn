@@ -218,7 +218,4 @@ layer_1/name = "Background"
 
 [node name="PlayerPlatformer" parent="." instance=ExtResource("2_6capa")]
 
-[node name="Camera2D" type="Camera2D" parent="PlayerPlatformer"]
-zoom = Vector2(4, 4)
-
 [node name="LevelManager" type="Node" parent="."]

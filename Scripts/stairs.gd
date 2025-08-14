@@ -34,8 +34,12 @@ func _ready() -> void:
 		position = Coords["SpotOne"]
 		SpotPicked = 0
 	elif WhichDoor == "Six":
-		position = Coords["SpotOne"]
-		SpotPicked = 0
+		if PickSpot == 0:
+			position = Coords["SpotOne"]
+			SpotPicked = 0
+		elif PickSpot == 1:
+			position = Coords["SpotTwo"]
+			SpotPicked = 1
 	elif WhichDoor == "Seven":
 		if PickSpot == 0:
 			position = Coords["SpotOne"]
