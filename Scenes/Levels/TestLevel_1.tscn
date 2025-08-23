@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://divfmd1j8uqyp"]
+[gd_scene load_steps=11 format=3 uid="uid://divfmd1j8uqyp"]
 
+[ext_resource type="Script" uid="uid://dsco4tmcqeahj" path="res://Scripts/Saving/MazeRoomConfig.gd" id="1_d7s43"]
 [ext_resource type="Texture2D" uid="uid://dqwuv0vbjt7cx" path="res://Assets/Textures/Tile Sheets/Collision_0.png" id="1_n4myo"]
 [ext_resource type="PackedScene" uid="uid://cnup6ibycerj6" path="res://Scenes/Enviornment/MazeRooms/MazeRoom.tscn" id="2_5po2d"]
 [ext_resource type="PackedScene" uid="uid://cq4hddt3v8ygn" path="res://Scenes/Player/Player_FreeMove.tscn" id="2_cw6mw"]
 [ext_resource type="PackedScene" uid="uid://b2i61l368rtv2" path="res://Scenes/Enviornment/MazeRooms/DoorKeys.tscn" id="3_5o6b6"]
 [ext_resource type="PackedScene" uid="uid://q4g2kry2hve0" path="res://Scenes/Enviornment/MazeRooms/Stairs.tscn" id="3_upvxh"]
 [ext_resource type="PackedScene" uid="uid://cgtniqt1ap4kk" path="res://Scenes/Enviornment/MazeRooms/Doors.tscn" id="4_lheyg"]
+[ext_resource type="PackedScene" uid="uid://cgyvi3s0huulr" path="res://Scenes/Menus/PauseGame.tscn" id="7_p33ue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6mw"]
 texture = ExtResource("1_n4myo")
@@ -181,6 +183,7 @@ sources/0 = SubResource("TileSetAtlasSource_cw6mw")
 
 [node name="TestLevel1" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_d7s43")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
@@ -268,331 +271,160 @@ Cam_BottomBorder = 768
 
 [node name="Stairs" type="Node" parent="."]
 
-[node name="Stairs_1" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_1" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(296, 104)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Up",
-"SpotTwo": ""
-})
-WhichDoor = "One"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(296, 104),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_2" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_2" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(216, -488)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Down",
-"SpotTwo": ""
-})
-WhichDoor = "Two"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(216, -488),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_3" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_3" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-152, -552)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": ""
-})
-WhichDoor = "Three"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-152, -552),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_4" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_4" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-24, 424)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": "Right"
-})
-WhichDoor = "Four"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-360, -152),
-"SpotTwo": Vector2(-24, 424)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_5" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_5" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(216, 216)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Down",
-"SpotTwo": ""
-})
-WhichDoor = "Five"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(216, 216),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_6" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_6" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-152, 24)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": "Down"
-})
-WhichDoor = "Six"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-104, -152),
-"SpotTwo": Vector2(-152, 24)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_7" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_7" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(552, 664)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": "Down"
-})
-WhichDoor = "Seven"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(600, -488),
-"SpotTwo": Vector2(552, 664)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_8" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_8" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(88, -216)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": ""
-})
-WhichDoor = "Eight"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(88, -216),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_9" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_9" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-664, -472)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Up",
-"SpotTwo": ""
-})
-WhichDoor = "Nine"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-664, -472),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_10" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_10" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(728, -552)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": "Down"
-})
-WhichDoor = "Ten"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-616, 360),
-"SpotTwo": Vector2(728, -552)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_11" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_11" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-152, 664)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Up",
-"SpotTwo": "Left"
-})
-WhichDoor = "Eleven"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-728, 104),
-"SpotTwo": Vector2(-152, 664)
-})
-SetKeys = NodePath("../../DoorKeys")
 
-[node name="Stairs_12" parent="Stairs" node_paths=PackedStringArray("SetKeys") instance=ExtResource("3_upvxh")]
+[node name="Stairs_12" parent="Stairs" instance=ExtResource("3_upvxh")]
 position = Vector2(-424, 616)
-StairDirection = Dictionary[String, String]({
-"SpotOne": "Right",
-"SpotTwo": ""
-})
-WhichDoor = "Twelve"
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(-424, 616),
-"SpotTwo": Vector2(0, 0)
-})
-SetKeys = NodePath("../../DoorKeys")
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Doors1_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors1_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-552, -264)
 DoorDirection = "Horizontal"
-CurrentDoor = "One"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors1_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors1_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-552, -248)
 DoorDirection = "Horizontal"
-CurrentDoor = "One"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors2_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors2_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-152, -264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Two"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors2_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors2_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-152, -248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Two"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors3_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors3_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(152, -264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Three"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors3_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors3_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(152, -248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Three"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors4_LT" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors4_LT" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(360, -264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Four"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors4_LB" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors4_LB" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(360, -248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Four"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors4_RT" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors4_RT" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(616, -264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Four"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors4_RB" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors4_RB" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(616, -248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Four"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors5_L" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors5_L" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-264, -88)
 DoorDirection = "Vertical"
-CurrentDoor = "Five"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors5_R" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors5_R" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-248, -88)
 DoorDirection = "Vertical"
-CurrentDoor = "Five"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors6_L" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors6_L" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(248, -88)
 DoorDirection = "Vertical"
-CurrentDoor = "Six"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors6_R" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors6_R" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(264, -88)
 DoorDirection = "Vertical"
-CurrentDoor = "Six"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors7_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors7_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-360, 248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Seven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors7_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors7_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-360, 264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Seven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors7_L" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors7_L" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-264, 488)
 DoorDirection = "Vertical"
-CurrentDoor = "Seven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors7_R" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors7_R" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-248, 488)
 DoorDirection = "Vertical"
-CurrentDoor = "Seven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors8_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors8_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-152, 248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Eight"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors8_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors8_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(-152, 264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Eight"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors9_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors9_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(152, 248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Nine"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors9_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors9_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(152, 264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Nine"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors10_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors10_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(488, 248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Ten"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors10_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors10_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(488, 264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Ten"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors11_T" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors11_T" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(552, 248)
 DoorDirection = "Horizontal"
-CurrentDoor = "Eleven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors11_B" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors11_B" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(552, 264)
 DoorDirection = "Horizontal"
-CurrentDoor = "Eleven"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors12_L" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors12_L" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(248, 616)
 DoorDirection = "Vertical"
-CurrentDoor = "Twelve"
-GetKeys = NodePath("../../DoorKeys")
 
-[node name="Doors12_R" parent="Doors" node_paths=PackedStringArray("GetKeys") instance=ExtResource("4_lheyg")]
+[node name="Doors12_R" parent="Doors" instance=ExtResource("4_lheyg")]
 position = Vector2(264, 616)
 DoorDirection = "Vertical"
-CurrentDoor = "Twelve"
-GetKeys = NodePath("../../DoorKeys")
+
+[node name="PauseGame" parent="." node_paths=PackedStringArray("player_in_scene", "door_keys") instance=ExtResource("7_p33ue")]
+player_in_scene = NodePath("../PlayerFreeMove")
+door_keys = NodePath("../DoorKeys")
 
 [node name="PlayerFreeMove" parent="." instance=ExtResource("2_cw6mw")]
-position = Vector2(-139, -47)
+unique_name_in_owner = true
+position = Vector2(-5, -652)

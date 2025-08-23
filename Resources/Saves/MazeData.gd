@@ -1,5 +1,7 @@
-extends Node
-var Keys: Dictionary[String,bool] = {
+extends Resource
+class_name MazeData
+
+@export var Keys: Dictionary[String,bool] = {
 	"One":    false,
 	"Two":    false,
 	"Three":  false,

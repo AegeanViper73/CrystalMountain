@@ -1,15 +1,84 @@
 extends Node2D
-@export_enum("Vertical","Horizontal") var DoorDirection: String
-@export_enum("One","Two","Three","Four","Five",
-			 "Six","Seven","Eight","Nine","Ten",
-			 "Eleven","Twelve","Exit") var CurrentDoor: String
-@export var GetKeys: Node
-var Opened: bool = false
-var LocationPick: int = 1
+@export_enum("Vertical","Horizontal","Exit") var DoorDirection: String
+#@export_enum("Exit","One","Two","Three","Four","Five",
+			 #"Six","Seven","Eight","Nine","Ten",
+			 #"Eleven","Twelve") var CurrentDoor: String
+#@export var GetKeys: Node
+@export var Opened: bool = false
+@export_enum("Exit","One","Two","Three","Four","Five",
+			 "Six","Seven","Eight","Nine","Ten","Eleven",
+			 "Twelve") var DoorNumber: String
 
 @onready var door_direction: AnimatedSprite2D = $AnimatedSprite2D
 @onready var vertical: CollisionShape2D = $StaticBody2D/Vertical
 @onready var horizontal: CollisionShape2D = $StaticBody2D/Horizontal
+
+@export var DoorLocs: Dictionary = {
+	"DoorExitLoc": {
+		"x": 0,
+		"y": 0
+	},
+	"DoorOneLoc": {
+		"x": 216.0,
+		"y": 504.0
+	},
+	"DoorTwoLoc": {
+		"x": 600.0,
+		"y": 504.0
+	},
+	"DoorThreeLoc": { 
+		"x": 904.0,
+		"y": 504.0
+	},
+	"DoorFourLoc": {
+		"One": {
+			"x": 1096.0,
+			"y": 504.0
+		},
+		"Two": {
+			"x": 1464.0,
+			"y": 504.0
+		}
+	},
+	"DoorFiveLoc": {
+		"x": 504.0,
+		"y": 664.0
+	},
+	"DoorSixLoc": {
+		"x": 1000.0,
+		"y": 664.0
+	},
+	"DoorSevenLoc": {
+		"One": {
+			"x": 408.0,
+			"y": 1000.0
+		},
+		"Two": {
+			"x": 504.0,
+			"y": 1224.0
+		}
+	},
+	"DoorEightLoc": {
+		"x": 600.0,
+		"y": 1000.0
+	},
+	"DoorNineLoc": {
+		"x": 904.0,
+		"y": 1000.0
+	},
+	"DoorTenLoc": {
+		"x": 1224.0,
+		"y": 1000.0
+	},
+	"DoorElevenLoc": {
+		"x": 1288.0,
+		"y": 1000.0
+	},
+	"DoorTwelveLoc": {
+		"x": 1000.0,
+		"y": 1352.0
+	}
+}
 
 
 
@@ -23,64 +92,19 @@ func _ready() -> void:
 		door_direction.frame = 1
 		vertical.disabled = false
 		horizontal.disabled = true
-	
-	#Set Locations of Stairs when there are multiple possibilities
-	
-	#if SignalStair.CorrespondingDoor == "TR_B":
-		#SignalStair.FacingDirection = "Right"
-		#LocationPick = randi_range(1,2)
-		#if LocationPick == 1:
-			#SignalStair.position = Vector2(-360,-152)
-		#elif LocationPick == 2:
-			#SignalStair.position = Vector2(-24,424)
-	#elif SignalStair.CorrespondingDoor == "BR_TR":
-		#LocationPick = randi_range(1,2)
-		#if LocationPick == 1:
-			#SignalStair.position = Vector2(-728,104)
-			#SignalStair.FacingDirection = "Up"
-		#elif LocationPick == 2:
-			#SignalStair.position = Vector2(-152,664)
-			#SignalStair.FacingDirection = "Left"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if CurrentDoor == "One":
-		if GetKeys.Keys["One"] == true:
-			Opened = true
-	elif CurrentDoor == "Two":
-		if GetKeys.Keys["Two"] == true:
-			Opened = true
-	elif CurrentDoor == "Three":
-		if GetKeys.Keys["Three"] == true:
-			Opened = true
-	elif CurrentDoor == "Four":
-		if GetKeys.Keys["Four"] == true:
-			Opened = true
-	elif CurrentDoor == "Five":
-		if GetKeys.Keys["Five"] == true:
-			Opened = true
-	elif CurrentDoor == "Six":
-		if GetKeys.Keys["Six"] == true:
-			Opened = true
-	elif CurrentDoor == "Seven":
-		if GetKeys.Keys["Seven"] == true:
-			Opened = true
-	elif CurrentDoor == "Eight":
-		if GetKeys.Keys["Eight"] == true:
-			Opened = true
-	elif CurrentDoor == "Nine":
-		if GetKeys.Keys["Nine"] == true:
-			Opened = true
-	elif CurrentDoor == "Ten":
-		if GetKeys.Keys["Ten"] == true:
-			Opened = true
-	elif CurrentDoor == "Eleven":
-		if GetKeys.Keys["Eleven"] == true:
-			Opened = true
-	elif CurrentDoor == "Twelve":
-		if GetKeys.Keys["Twelve"] == true:
-			Opened = true
-	
 	if Opened == true:
-		self.queue_free()
+		self.visible = false
+		if DoorDirection == "Vertical":
+			vertical.disabled = true
+		if DoorDirection == "Horizontal":
+			horizontal.disabled = true
+	else:
+		self.visible = true
+		if DoorDirection == "Vertical":
+			vertical.disabled = false
+		if DoorDirection == "Horizontal":
+			horizontal.disabled = false

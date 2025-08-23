@@ -38,6 +38,8 @@ script = ExtResource("1_j6xyh")
 sprite_frames = SubResource("SpriteFrames_y34sf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
 [node name="Vertical" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_retnh")

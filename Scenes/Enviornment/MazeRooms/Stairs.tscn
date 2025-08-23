@@ -44,14 +44,6 @@ size = Vector2(48, 48)
 
 [node name="Stairs" type="Node2D"]
 script = ExtResource("1_i5dhj")
-StairDirection = Dictionary[String, String]({
-"SpotOne": "",
-"SpotTwo": ""
-})
-Coords = Dictionary[String, Vector2]({
-"SpotOne": Vector2(0, 0),
-"SpotTwo": Vector2(0, 0)
-})
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y8a46")

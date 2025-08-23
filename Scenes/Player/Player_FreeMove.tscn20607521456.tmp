@@ -31,11 +31,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_446bw"]
-size = Vector2(10, 10)
+size = Vector2(10, 24)
 
 [sub_resource type="Gradient" id="Gradient_onavl"]
-offsets = PackedFloat32Array(0.889474)
-colors = PackedColorArray(1, 1, 1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lbw0d"]
 gradient = SubResource("Gradient_onavl")
@@ -52,7 +51,6 @@ motion_mode = 1
 script = ExtResource("1_onavl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -0.5)
 sprite_frames = SubResource("SpriteFrames_su26j")
 animation = &"Straight"
 autoplay = "Straight"
@@ -61,11 +59,10 @@ autoplay = "Straight"
 shape = SubResource("RectangleShape2D_446bw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 blend_mode = 2
 shadow_enabled = true
-shadow_color = Color(0.380392, 0.176471, 0.529412, 1)
 texture = SubResource("GradientTexture2D_lbw0d")
 texture_scale = 8.0

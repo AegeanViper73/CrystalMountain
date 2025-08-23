@@ -1,0 +1,718 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgyvi3s0huulr"]
+
+[ext_resource type="Script" uid="uid://bgoj4j4fyb3dt" path="res://Scripts/Menus/pause_game.gd" id="1_7dl0m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dl0m"]
+bg_color = Color(0.6, 0.278431, 0.6, 0.360784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdiyl"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie60p"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uqlr"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvfhc"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfsd2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_7dl0m"]
+resource_name = "PauseGame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/VBoxContainer/Resume:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/VBoxContainer/Options:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/VBoxContainer/Exit:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/VBoxContainer/HBoxContainer/Save:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/VBoxContainer/HBoxContainer/Load:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1uqlr"]
+resource_name = "UnpauseGame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/VBoxContainer/Resume:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/VBoxContainer/Options:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/VBoxContainer/Exit:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/VBoxContainer/HBoxContainer/Save:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/VBoxContainer/HBoxContainer/Load:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfsd2"]
+_data = {
+&"PauseGame": SubResource("Animation_7dl0m"),
+&"UnpauseGame": SubResource("Animation_1uqlr")
+}
+
+[sub_resource type="Animation" id="Animation_uvfhc"]
+resource_name = "CloseBoth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile3:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile3:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ie60p"]
+resource_name = "OpenLoad"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile3:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile3:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hfsd2"]
+resource_name = "OpenSave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save/SaveFile3:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load/LoadFile3:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Control/HBoxContainer2/Load:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Control/HBoxContainer2/Save:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdiyl"]
+_data = {
+&"CloseBoth": SubResource("Animation_uvfhc"),
+&"OpenLoad": SubResource("Animation_ie60p"),
+&"OpenSave": SubResource("Animation_hfsd2")
+}
+
+[node name="PauseGame" type="Node2D"]
+script = ExtResource("1_7dl0m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dl0m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.925
+offset_top = -128.0
+offset_right = -11.925
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "RESUME"
+
+[node name="Options" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "EXIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Save" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "SAVE"
+
+[node name="Load" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "LOAD"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -412.725
+offset_top = -128.0
+offset_right = -112.725
+offset_bottom = 128.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Save" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/HBoxContainer2/Save"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "SAVE"
+
+[node name="SaveFile1" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Save"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+disabled = true
+text = "FILE 1"
+
+[node name="SaveFile2" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Save"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+disabled = true
+text = "FILE 2"
+
+[node name="SaveFile3" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Save"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+disabled = true
+text = "FILE 3"
+
+[node name="Load" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/HBoxContainer2/Load"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "LOAD"
+
+[node name="LoadFile1" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Load"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "FILE 1"
+
+[node name="LoadFile2" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Load"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "FILE 2"
+
+[node name="LoadFile3" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Load"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "FILE 3"
+
+[node name="LoadFileDefault" type="Button" parent="CanvasLayer/Control/HBoxContainer2/Load"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdiyl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ie60p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1uqlr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uvfhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfsd2")
+text = "DEFAULT"
+
+[node name="Pause" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hfsd2")
+}
+
+[node name="SaveStuff" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sdiyl")
+}
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Save/SaveFile1" to="." method="_on_save_file_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Save/SaveFile2" to="." method="_on_save_file_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Save/SaveFile3" to="." method="_on_save_file_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Load/LoadFile1" to="." method="_on_load_file_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Load/LoadFile2" to="." method="_on_load_file_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Load/LoadFile3" to="." method="_on_load_file_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer2/Load/LoadFileDefault" to="." method="_on_load_file_default_pressed"]

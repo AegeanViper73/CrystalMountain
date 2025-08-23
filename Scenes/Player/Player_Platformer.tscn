@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://77ni2xmht0qy" path="res://Assets/Textures/Sprites/Player/CrystalPlayer.png" id="1_glndo"]
 [ext_resource type="Script" uid="uid://bd2l20q273woa" path="res://Scripts/Player/player_platformer.gd" id="1_radb5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astlk"]
+size = Vector2(10, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_radb5"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b47py"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmt2t"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1qy7"]
+size = Vector2(10, 20)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_radb5"]
 atlas = ExtResource("1_glndo")
 region = Rect2(0, 64, 32, 32)
@@ -194,30 +209,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_astlk"]
-size = Vector2(10, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_radb5"]
-size = Vector2(10, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b47py"]
-size = Vector2(10, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmt2t"]
-size = Vector2(10, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1qy7"]
-size = Vector2(10, 20)
-
 [node name="PlayerPlatformer" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_radb5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3vgmc")
-animation = &"Idle_Right"
-autoplay = "Idle_Right"
-frame_progress = 0.442421
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -259,6 +253,12 @@ collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_GravD"]
 shape = SubResource("RectangleShape2D_k1qy7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3vgmc")
+animation = &"Move_Left"
+autoplay = "Idle_Right"
+frame_progress = 0.0928377
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="area_entered" from="Detect_GravL" to="." method="_on_detect_area_entered"]

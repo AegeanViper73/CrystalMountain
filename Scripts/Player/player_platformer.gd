@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Down":
 			if is_on_floor():
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.y < GravityLimit:
@@ -93,7 +93,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Up":
 			if is_on_ceiling():
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.y > -GravityLimit:
@@ -133,7 +133,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Right":
 			if is_on_wall() and get_slide_collision(0).get_position().x > position.x: #This extra bit prevents sticking to "ceiling"
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.x < GravityLimit:
@@ -173,7 +173,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Left":
 			if is_on_wall() and get_slide_collision(0).get_position().x < position.x: #This extra bit prevents sticking to "ceiling"
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.x > -GravityLimit:
@@ -215,7 +215,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Down":
 			if is_on_floor():
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.y < GravityLimit:
@@ -255,7 +255,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Up":
 			if is_on_ceiling():
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.y > -GravityLimit:
@@ -295,7 +295,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Right":
 			if is_on_wall() and get_slide_collision(0).get_position().x > position.x: #This extra bit prevents sticking to "ceiling"
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.x < GravityLimit:
@@ -335,7 +335,7 @@ func _physics_process(delta: float) -> void:
 		if GravityDirection == "Left":
 			if is_on_wall() and get_slide_collision(0).get_position().x < position.x: #This extra bit prevents sticking to "ceiling"
 				CanJump = true
-				#coyote_timer.start()
+				coyote_timer.start()
 			else:
 				
 				if velocity.x > -GravityLimit:
