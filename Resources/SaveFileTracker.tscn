@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfgimux4t0kmx"]
+
+[ext_resource type="Script" uid="uid://fme8xghscffc" path="res://Resources/savefile_tracker.gd" id="1_15l8s"]
+
+[node name="SaveFileTracker" type="Node"]
+script = ExtResource("1_15l8s")

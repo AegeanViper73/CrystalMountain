@@ -1,19 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://q4g2kry2hve0"]
+[gd_scene load_steps=6 format=3 uid="uid://q4g2kry2hve0"]
 
 [ext_resource type="Script" uid="uid://by5uriqnq4225" path="res://Scripts/stairs.gd" id="1_i5dhj"]
 [ext_resource type="Texture2D" uid="uid://dqwuv0vbjt7cx" path="res://Assets/Textures/Tile Sheets/Collision_0.png" id="1_mvdin"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5dhj"]
-atlas = ExtResource("1_mvdin")
-region = Rect2(112, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ree2"]
-atlas = ExtResource("1_mvdin")
-region = Rect2(112, 144, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nq2xj"]
-atlas = ExtResource("1_mvdin")
-region = Rect2(112, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp1jw"]
 atlas = ExtResource("1_mvdin")
@@ -22,15 +10,6 @@ region = Rect2(112, 48, 48, 48)
 [sub_resource type="SpriteFrames" id="SpriteFrames_y8a46"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5dhj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ree2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nq2xj")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jp1jw")
 }],

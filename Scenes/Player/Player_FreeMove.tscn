@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq4hddt3v8ygn"]
+[gd_scene load_steps=10 format=3 uid="uid://cq4hddt3v8ygn"]
 
 [ext_resource type="Script" uid="uid://7bk3buuxgu0y" path="res://Scripts/Player/player_free_move.gd" id="1_onavl"]
 [ext_resource type="Texture2D" uid="uid://fvorkt0or7d7" path="res://Assets/Textures/Sprites/Player/CrystalPlayer_TopDown.png" id="2_onavl"]
@@ -44,6 +44,9 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onavl"]
+size = Vector2(10, 10)
+
 [node name="PlayerFreeMove" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -61,7 +64,7 @@ autoplay = "Straight"
 shape = SubResource("RectangleShape2D_446bw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(6, 6)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 blend_mode = 2
@@ -69,3 +72,12 @@ shadow_enabled = true
 shadow_color = Color(0.380392, 0.176471, 0.529412, 1)
 texture = SubResource("GradientTexture2D_lbw0d")
 texture_scale = 8.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_onavl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

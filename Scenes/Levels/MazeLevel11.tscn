@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7vh452ljitht"]
+
+[ext_resource type="Texture2D" uid="uid://bgsiocelqcrww" path="res://Assets/Textures/Tile Sheets/Collision_Platformer.png" id="1_df4c6"]
+[ext_resource type="PackedScene" uid="uid://bex8ybu8iv2ed" path="res://Scenes/Player/Player_Platformer.tscn" id="2_6eqio"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mq0k"]
+resource_name = "GravityZones"
+texture = ExtResource("1_df4c6")
+0:1/animation_columns = 4
+0:1/animation_frame_0/duration = 0.25
+0:1/animation_frame_1/duration = 0.25
+0:1/animation_frame_2/duration = 0.25
+0:1/animation_frame_3/duration = 0.25
+0:1/0 = 0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/animation_columns = 4
+0:2/animation_frame_0/duration = 0.25
+0:2/animation_frame_1/duration = 0.25
+0:2/animation_frame_2/duration = 0.25
+0:2/animation_frame_3/duration = 0.25
+0:2/0 = 0
+0:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/animation_columns = 4
+0:3/animation_frame_0/duration = 0.25
+0:3/animation_frame_1/duration = 0.25
+0:3/animation_frame_2/duration = 0.25
+0:3/animation_frame_3/duration = 0.25
+0:3/0 = 0
+0:3/0/physics_layer_3/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/animation_columns = 4
+0:4/animation_frame_0/duration = 0.25
+0:4/animation_frame_1/duration = 0.25
+0:4/animation_frame_2/duration = 0.25
+0:4/animation_frame_3/duration = 0.25
+0:4/0 = 0
+0:4/0/physics_layer_4/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_2te4a"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 256
+physics_layer_1/collision_mask = 0
+physics_layer_2/collision_layer = 512
+physics_layer_2/collision_mask = 0
+physics_layer_3/collision_layer = 1024
+physics_layer_3/collision_mask = 0
+physics_layer_4/collision_layer = 2048
+physics_layer_4/collision_mask = 0
+sources/1 = SubResource("TileSetAtlasSource_2mq0k")
+
+[node name="MazeLevel2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2te4a")
+format = 2
+layer_0/name = "Map"
+layer_0/tile_data = PackedInt32Array(-65538, 1, 0, -2, 1, 0, 65534, 1, 0, 131070, 1, 0, 196606, 1, 0, -131072, 1, 0, -65536, 1, 0, 0, 1, 0, 65536, 1, 0, 131072, 1, 0)
+
+[node name="PlayerPlatformer" parent="." instance=ExtResource("2_6eqio")]
+position = Vector2(6, -73)

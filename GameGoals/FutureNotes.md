@@ -18,5 +18,5 @@ PLATFORMER:
 
 MAZE:
 	1) When walking at an area in the maze, permanently show that section
-	2) Only show maze within eyesight, never past walls
+	2) Only show maze within eyesight, never past walls    *already implemented
 	-Either way, I'm not sure yet

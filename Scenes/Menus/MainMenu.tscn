@@ -1,0 +1,142 @@
+[gd_scene load_steps=3 format=3 uid="uid://06bjql3non5m"]
+
+[ext_resource type="Script" uid="uid://cdspu700mlx0q" path="res://Scripts/Menus/main_menu.gd" id="1_b42ut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b42ut"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b42ut")
+
+[node name="Main" type="BoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -188.5
+offset_right = 180.5
+offset_bottom = 188.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vContainer" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="START" type="Button" parent="Main/vContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+text = "PLAY"
+icon_alignment = 1
+
+[node name="OPTIONS" type="Button" parent="Main/vContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+text = "OPTIONS"
+icon_alignment = 1
+
+[node name="EXIT" type="Button" parent="Main/vContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+text = "EXIT"
+icon_alignment = 1
+
+[node name="Play" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -63.33
+offset_right = 427.0
+offset_bottom = 322.67
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 330
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Play"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="hCont1" type="HBoxContainer" parent="Play/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Save1" type="Button" parent="Play/VBoxContainer/hCont1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+disabled = true
+text = "SAVE1"
+icon_alignment = 1
+
+[node name="Save2" type="Button" parent="Play/VBoxContainer/hCont1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+disabled = true
+text = " SAVE 2 "
+
+[node name="Save3" type="Button" parent="Play/VBoxContainer/hCont1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+disabled = true
+text = " SAVE 3 "
+
+[node name="hCont2" type="HBoxContainer" parent="Play/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="NewGame" type="Button" parent="Play/VBoxContainer/hCont2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+text = " NEW GAME "
+
+[node name="Back" type="Button" parent="Play/VBoxContainer/hCont2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 84
+theme_override_styles/focus = SubResource("StyleBoxFlat_b42ut")
+text = " EXIT "
+
+[connection signal="pressed" from="Main/vContainer/START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main/vContainer/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Play/VBoxContainer/hCont1/Save1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="Play/VBoxContainer/hCont2/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Play/VBoxContainer/hCont2/Back" to="." method="_on_back_pressed"]

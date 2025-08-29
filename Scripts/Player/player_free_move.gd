@@ -13,35 +13,39 @@ var Cam_BordersReset: bool = false
 
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Pause"):
+		SaveFileTracker.IsGamePaused = !SaveFileTracker.IsGamePaused
 	#Animate Player
-	var PlayerX = Input.get_axis("MoveLeft","MoveRight")
-	var PlayerY = Input.get_axis("MoveUp","MoveDown")
-	if (PlayerX != 0 and PlayerY == 0) or (PlayerX == 0 and PlayerY != 0):
-		player_anim.play("Straight")
-		if PlayerY > 0:
-			self.rotation_degrees = 0
-		elif PlayerY < 0:
-			self.rotation_degrees = 180
-		if PlayerX < 0:
-			self.rotation_degrees = 90
-		if PlayerX > 0:
-			self.rotation_degrees = 270
-	if (PlayerX !=0 and PlayerY != 0):
-		player_anim.play("Diagonal")
-		if PlayerX > 0 and PlayerY > 0:
-			self.rotation_degrees = 0
-		if PlayerX > 0 and PlayerY < 0:
-			self.rotation_degrees = 270
-		if PlayerX < 0 and PlayerY > 0:
-			self.rotation_degrees = 90
-		if PlayerX < 0 and PlayerY < 0:
-			self.rotation_degrees = 180
+	if SaveFileTracker.IsGamePaused == false:
+		var PlayerX = Input.get_axis("MoveLeft","MoveRight")
+		var PlayerY = Input.get_axis("MoveUp","MoveDown")
+		if (PlayerX != 0 and PlayerY == 0) or (PlayerX == 0 and PlayerY != 0):
+			player_anim.play("Straight")
+			if PlayerY > 0:
+				self.rotation_degrees = 0
+			elif PlayerY < 0:
+				self.rotation_degrees = 180
+			if PlayerX < 0:
+				self.rotation_degrees = 90
+			if PlayerX > 0:
+				self.rotation_degrees = 270
+		if (PlayerX !=0 and PlayerY != 0):
+			player_anim.play("Diagonal")
+			if PlayerX > 0 and PlayerY > 0:
+				self.rotation_degrees = 0
+			if PlayerX > 0 and PlayerY < 0:
+				self.rotation_degrees = 270
+			if PlayerX < 0 and PlayerY > 0:
+				self.rotation_degrees = 90
+			if PlayerX < 0 and PlayerY < 0:
+				self.rotation_degrees = 180
 	
 	if Cam_BordersReset == true:
 		player_cam.limit_left   = Cam_LeftBorder
@@ -54,8 +58,12 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	
-	var PlayerMoveX = Input.get_axis("MoveLeft","MoveRight")
-	var PlayerMoveY = Input.get_axis("MoveUp","MoveDown")
-	velocity = round(Vector2(PlayerMoveX,PlayerMoveY) * PlayerMoveSpeed)
-	move_and_slide()
+	if SaveFileTracker.IsGamePaused == false:
+		var PlayerMoveX = Input.get_axis("MoveLeft","MoveRight")
+		var PlayerMoveY = Input.get_axis("MoveUp","MoveDown")
+		velocity = round(Vector2(PlayerMoveX,PlayerMoveY) * PlayerMoveSpeed)
+		move_and_slide()
+
+
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#print(body.GoToLevel)

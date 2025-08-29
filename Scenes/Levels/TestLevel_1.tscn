@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2i61l368rtv2" path="res://Scenes/Enviornment/MazeRooms/DoorKeys.tscn" id="3_5o6b6"]
 [ext_resource type="PackedScene" uid="uid://q4g2kry2hve0" path="res://Scenes/Enviornment/MazeRooms/Stairs.tscn" id="3_upvxh"]
 [ext_resource type="PackedScene" uid="uid://cgtniqt1ap4kk" path="res://Scenes/Enviornment/MazeRooms/Doors.tscn" id="4_lheyg"]
-[ext_resource type="PackedScene" uid="uid://cgyvi3s0huulr" path="res://Scenes/Menus/PauseGame.tscn" id="7_p33ue"]
+[ext_resource type="PackedScene" uid="uid://dw6ubftx00eed" path="res://Scenes/Menus/PauseGame.tscn" id="7_p33ue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cw6mw"]
 texture = ExtResource("1_n4myo")

@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgoih4jc874cj"]
+
+[ext_resource type="Script" uid="uid://c0nial4f141m0" path="res://Scripts/Menus/pause_menu.gd" id="1_8mfmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0dhj"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="PauseMenu" type="Control"]
+top_level = true
+light_mask = 0
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8mfmb")
+
+[node name="Panel" type="Panel" parent="."]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 480)
+theme_override_styles/panel = SubResource("StyleBoxFlat_f0dhj")
+
+[node name="Main" type="BoxContainer" parent="."]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.085, 0.085)
+pivot_offset = Vector2(640, 480)
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="RESUME" type="Button" parent="Main/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "RESUME"
+
+[node name="OPTIONS" type="Button" parent="Main/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "OPTIONS"
+
+[node name="SAVE" type="Button" parent="Main/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "SAVE"
+
+[node name="MAINMENU" type="Button" parent="Main/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "MAIN MENU"
+
+[node name="QUITGAME" type="Button" parent="Main/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "QUIT GAME"
+
+[node name="Save" type="BoxContainer" parent="."]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -648.485
+offset_top = -461.735
+offset_right = 835.515
+offset_bottom = -31.735
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.085, 0.085)
+pivot_offset = Vector2(640, 480)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Save"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Save/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+
+[node name="SAVE 1" type="Button" parent="Save/VBoxContainer/HBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "SAVE 1"
+
+[node name="SAVE 2" type="Button" parent="Save/VBoxContainer/HBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "SAVE 2"
+
+[node name="SAVE 3" type="Button" parent="Save/VBoxContainer/HBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "SAVE 3"
+
+[node name="BACK" type="Button" parent="Save/VBoxContainer"]
+light_mask = 0
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "BACK"
+
+[connection signal="pressed" from="Main/VBoxContainer/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/SAVE" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MAINMENU" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/QUITGAME" to="." method="_on_quitgame_pressed"]
+[connection signal="pressed" from="Save/VBoxContainer/HBoxContainer/SAVE 1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="Save/VBoxContainer/HBoxContainer/SAVE 2" to="." method="_on_save_2_pressed"]
+[connection signal="pressed" from="Save/VBoxContainer/HBoxContainer/SAVE 3" to="." method="_on_save_3_pressed"]
+[connection signal="pressed" from="Save/VBoxContainer/BACK" to="." method="_on_back_pressed"]

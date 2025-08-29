@@ -44,7 +44,8 @@ func _process(_delta: float) -> void:
 		if player_cam.ignore_rotation == true:
 			player_cam.ignore_rotation = false
 		else: player_cam.ignore_rotation = true
-	
+	if Input.is_action_just_pressed("TempThree"):
+		get_tree().change_scene_to_file("res://Scenes/Levels/Maze.tscn")
 
 
 func _physics_process(delta: float) -> void:
